@@ -316,7 +316,7 @@ class lab7_task1(gr.top_block, Qt.QWidget):
         self.blocks_complex_to_imag_0 = blocks.complex_to_imag(1)
         self.blocks_add_const_vxx_0_0 = blocks.add_const_ff(-0.5)
         self.blocks_add_const_vxx_0 = blocks.add_const_ff(-0.5)
-        self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, 10, 1, 0, 0)
+        self.analog_sig_source_x_0 = analog.sig_source_c(samp_rate, analog.GR_COS_WAVE, 0.1, 1, 0, 0)
         self.analog_random_source_x_0 = blocks.vector_source_b(list(map(int, numpy.random.randint(0, 4, 1000))), True)
 
 
@@ -334,12 +334,12 @@ class lab7_task1(gr.top_block, Qt.QWidget):
         self.connect((self.blocks_complex_to_real_0, 0), (self.blocks_threshold_ff_0, 0))
         self.connect((self.blocks_delay_0, 0), (self.blocks_multiply_const_vxx_0, 0))
         self.connect((self.blocks_multiply_const_vxx_0, 0), (self.blocks_throttle_1_0, 0))
-        self.connect((self.blocks_multiply_xx_0, 0), (self.blocks_complex_to_imag_0, 0))
-        self.connect((self.blocks_multiply_xx_0, 0), (self.blocks_complex_to_real_0, 0))
         self.connect((self.blocks_multiply_xx_0, 0), (self.blocks_multiply_xx_2, 0))
         self.connect((self.blocks_multiply_xx_0, 0), (self.digital_pfb_clock_sync_xxx_0, 0))
         self.connect((self.blocks_multiply_xx_1, 0), (self.blocks_sub_xx_0, 0))
         self.connect((self.blocks_multiply_xx_1_0, 0), (self.blocks_sub_xx_0, 1))
+        self.connect((self.blocks_multiply_xx_2, 0), (self.blocks_complex_to_imag_0, 0))
+        self.connect((self.blocks_multiply_xx_2, 0), (self.blocks_complex_to_real_0, 0))
         self.connect((self.blocks_multiply_xx_2, 0), (self.digital_pfb_clock_sync_xxx_0_0, 0))
         self.connect((self.blocks_sub_xx_0, 0), (self.iir_filter_xxx_0, 0))
         self.connect((self.blocks_threshold_ff_0, 0), (self.blocks_add_const_vxx_0, 0))

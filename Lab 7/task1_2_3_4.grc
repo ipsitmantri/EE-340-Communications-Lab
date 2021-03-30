@@ -167,7 +167,7 @@ blocks:
     alias: ''
     amp: '1'
     comment: ''
-    freq: '10'
+    freq: '0.1'
     maxoutbuf: '0'
     minoutbuf: '0'
     offset: '0'
@@ -648,7 +648,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [1503, 472]
+    coordinate: [1517, 463]
     rotation: 270
     state: true
 - name: import_0
@@ -1135,12 +1135,12 @@ connections:
 - [blocks_complex_to_real_0, '0', blocks_threshold_ff_0, '0']
 - [blocks_delay_0, '0', blocks_multiply_const_vxx_0, '0']
 - [blocks_multiply_const_vxx_0, '0', blocks_throttle_1_0, '0']
-- [blocks_multiply_xx_0, '0', blocks_complex_to_imag_0, '0']
-- [blocks_multiply_xx_0, '0', blocks_complex_to_real_0, '0']
 - [blocks_multiply_xx_0, '0', blocks_multiply_xx_2, '0']
 - [blocks_multiply_xx_0, '0', digital_pfb_clock_sync_xxx_0, '0']
 - [blocks_multiply_xx_1, '0', blocks_sub_xx_0, '0']
 - [blocks_multiply_xx_1_0, '0', blocks_sub_xx_0, '1']
+- [blocks_multiply_xx_2, '0', blocks_complex_to_imag_0, '0']
+- [blocks_multiply_xx_2, '0', blocks_complex_to_real_0, '0']
 - [blocks_multiply_xx_2, '0', digital_pfb_clock_sync_xxx_0_0, '0']
 - [blocks_sub_xx_0, '0', iir_filter_xxx_0, '0']
 - [blocks_threshold_ff_0, '0', blocks_add_const_vxx_0, '0']
